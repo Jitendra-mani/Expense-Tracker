@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpenseTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Expense<span>Track</span></h2>
+
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Expenses</a>
+            <a href="#">Reports</a>
+            <a href="#">Settings</a>
+        </nav>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Track and manage your expenses</p>
+            </div>
+
+            <div class="profile">
+                JD
+            </div>
+        </header>
+
+
+        <!-- Summary Cards -->
+        <section class="summary-grid">
+
+            <!-- Total Balance -->
+            <div class="summary-card">
+                <p>Total Balance</p>
+
+                <h2 id="totalBalance">₹25,000</h2>
+
+                <span class="positive">
+                    Starting balance
+                </span>
+            </div>
+
+
+            <!-- Total Expenses -->
+            <div class="summary-card">
+                <p>Total Expenses</p>
+
+                <h2 id="totalExpenses">₹0</h2>
+
+                <span>
+                    All expenses
+                </span>
+            </div>
+
+
+            <!-- This Month -->
+            <div class="summary-card">
+                <p>This Month</p>
+
+                <h2 id="thisMonth">₹0</h2>
+
+                <span id="currentMonth">
+                    September 2026
+                </span>
+            </div>
+
+
+            <!-- Transactions -->
+            <div class="summary-card">
+                <p>Transactions</p>
+
+                <h2 id="transactionCount">0</h2>
+
+                <span>
+                    total transactions
+                </span>
+            </div>
+
+        </section>
+
+
+        <!-- Monthly Budget -->
+        <section class="budget-card">
+
+            <p>Monthly Budget</p>
+
+            <h2 id="budgetAmount">₹5,000</h2>
+
+            <div class="progress-container">
+                <div id="budgetProgress"></div>
+            </div>
+
+            <p id="remainingBudget">
+                ₹5,000 remaining
+            </p>
+
+            <input
+                type="number"
+                id="budgetInput"
+                placeholder="Enter monthly budget"
+            >
+
+            <button id="setBudgetBtn">
+                Set Budget
+            </button>
+
+        </section>
+
+
+        <!-- Add Expense -->
+        <section class="expense-form-section">
+
+            <h2>Add Expense</h2>
+
+            <form id="expenseForm">
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Expense title"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="Amount"
+                    min="1"
+                    required
+                >
+
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="food">Food</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="travel">Travel</option>
+                    <option value="bills">Bills</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+                <textarea
+                    id="description"
+                    placeholder="Description"
+                ></textarea>
+
+                <button type="submit" id="submitBtn">
+                    Add Expense
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Recent Expenses -->
+        <section class="expenses-section">
+
+            <div class="section-header">
+
+                <h2>Recent Expenses</h2>
+
+                <div class="header-actions">
+
+                    <button class="view-btn">
+                        View All
+                    </button>
+
+                    <button
+                        class="clear-btn"
+                        id="clearAllBtn"
+                    >
+                        Clear All
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Search and Filter -->
+            <div class="filters">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search expenses..."
+                >
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="food">
+                        Food
+                    </option>
+
+                    <option value="shopping">
+                        Shopping
+                    </option>
+
+                    <option value="travel">
+                        Travel
+                    </option>
+
+                    <option value="bills">
+                        Bills
+                    </option>
+
+                    <option value="entertainment">
+                        Entertainment
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Expense Table -->
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Title</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="expenseTableBody">
+
+                    <!-- JavaScript will add expenses here -->
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
